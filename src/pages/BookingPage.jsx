@@ -80,7 +80,7 @@ const BookingPage = () => {
           />
           <div className="flex-1">
             <h3 className="font-semibold text-gray-900">{bodyguard.name}</h3>
-            <p className="text-sm text-gray-600">${bodyguard.hourlyRate}/hr • {bodyguard.rating} ⭐</p>
+            <p className="text-sm text-gray-600">₹{bodyguard.hourlyRate.toLocaleString('en-IN')}/hr • {bodyguard.rating} ⭐</p>
           </div>
         </div>
       </div>
@@ -250,13 +250,13 @@ const BookingPage = () => {
               <span>
                 {calculateHours() >= 8 && bodyguard.dailyRate 
                   ? 'Daily Rate (8+ hours)' 
-                  : `${calculateHours().toFixed(1)} hours @ $${bodyguard.hourlyRate}/hr`}
+                  : `${calculateHours().toFixed(1)} hours @ ₹${bodyguard.hourlyRate.toLocaleString('en-IN')}/hr`}
               </span>
-              <span>${calculateTotal().toFixed(2)}</span>
+              <span>₹{calculateTotal().toLocaleString('en-IN')}</span>
             </div>
             <div className="border-t border-gray-200 pt-2 flex justify-between font-semibold text-lg text-gray-900">
               <span>Total</span>
-              <span>${calculateTotal().toFixed(2)}</span>
+              <span>₹{calculateTotal().toLocaleString('en-IN')}</span>
             </div>
           </div>
         </div>

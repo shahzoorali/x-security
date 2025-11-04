@@ -4,7 +4,7 @@ import { Calendar, Clock, MapPin, CheckCircle, XCircle, Clock as ClockIcon } fro
 import Header from '../components/Header';
 import { getBodyguardById } from '../data/mockBodyguards';
 
-// Mock bookings data
+// Mock bookings data - Indian Standards
 const mockBookings = [
   {
     id: 'booking-001',
@@ -13,9 +13,9 @@ const mockBookings = [
     date: '2024-01-15',
     startTime: '10:00',
     endTime: '14:00',
-    location: '123 Main St, New York, NY',
+    location: '123 MG Road, Mumbai, Maharashtra',
     status: 'confirmed',
-    total: 340,
+    total: 6000,
     createdAt: '2024-01-10'
   },
   {
@@ -25,9 +25,9 @@ const mockBookings = [
     date: '2024-01-20',
     startTime: '18:00',
     endTime: '23:00',
-    location: 'Central Park, New York, NY',
+    location: 'Cubbon Park, Bangalore, Karnataka',
     status: 'pending',
-    total: 1750,
+    total: 30000,
     eventType: 'Concert',
     guestCount: 500,
     createdAt: '2024-01-12'
@@ -39,9 +39,9 @@ const mockBookings = [
     date: '2024-01-08',
     startTime: '09:00',
     endTime: '17:00',
-    location: 'Miami Airport, FL',
+    location: 'Indira Gandhi International Airport, Delhi',
     status: 'completed',
-    total: 720,
+    total: 14000,
     createdAt: '2024-01-05'
   },
 ];
@@ -189,7 +189,7 @@ const BookingsPage = () => {
                       <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-200">
                         <div>
                           <span className="text-sm text-gray-600">Total</span>
-                          <div className="text-lg font-bold text-gray-900">${booking.total}</div>
+                          <div className="text-lg font-bold text-gray-900">₹{booking.total.toLocaleString('en-IN')}</div>
                         </div>
                         {booking.status === 'pending' && (
                           <button className="px-4 py-2 text-primary-600 border border-primary-600 rounded-lg font-medium text-sm">

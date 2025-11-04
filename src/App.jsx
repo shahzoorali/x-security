@@ -4,6 +4,7 @@ import SearchPage from './pages/SearchPage';
 import BodyguardDetailPage from './pages/BodyguardDetailPage';
 import BookingPage from './pages/BookingPage';
 import BookingsPage from './pages/BookingsPage';
+import ProfilePage from './pages/ProfilePage';
 import BottomNav from './components/BottomNav';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/bodyguard/:id" element={<BodyguardDetailPage />} />
           <Route path="/booking/:id" element={<BookingPage />} />
           <Route path="/bookings" element={<BookingsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
         <BottomNav />
       </div>

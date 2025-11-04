@@ -13,7 +13,7 @@ const SearchPage = () => {
   const [filters, setFilters] = useState({
     availability: 'all',
     minRating: 0,
-    maxPrice: 200,
+    maxPrice: 10000,
     isTeam: undefined,
   });
   const [results, setResults] = useState(mockBodyguards);
@@ -53,7 +53,7 @@ const SearchPage = () => {
     setFilters({
       availability: 'all',
       minRating: 0,
-      maxPrice: 200,
+      maxPrice: 10000,
       isTeam: undefined,
     });
     setSearchQuery('');
@@ -61,7 +61,7 @@ const SearchPage = () => {
 
   const hasActiveFilters = filters.availability !== 'all' || 
     filters.minRating > 0 || 
-    filters.maxPrice < 200 || 
+    filters.maxPrice < 10000 || 
     filters.isTeam !== undefined ||
     searchQuery !== '';
 
@@ -103,7 +103,7 @@ const SearchPage = () => {
             Filters
             {hasActiveFilters && (
               <span className="bg-primary-600 text-white text-xs px-2 py-0.5 rounded-full">
-                {[filters.availability !== 'all', filters.minRating > 0, filters.maxPrice < 200, filters.isTeam !== undefined, searchQuery !== ''].filter(Boolean).length}
+                {[filters.availability !== 'all', filters.minRating > 0, filters.maxPrice < 10000, filters.isTeam !== undefined, searchQuery !== ''].filter(Boolean).length}
               </span>
             )}
           </button>
@@ -184,20 +184,20 @@ const SearchPage = () => {
           {/* Price */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Max Price: ${filters.maxPrice}/hr
+              Max Price: ₹{filters.maxPrice.toLocaleString('en-IN')}/hr
             </label>
             <input
               type="range"
-              min="50"
-              max="500"
-              step="10"
+              min="1000"
+              max="10000"
+              step="500"
               value={filters.maxPrice}
               onChange={(e) => handleFilterChange('maxPrice', parseInt(e.target.value))}
               className="w-full"
             />
             <div className="flex justify-between text-xs text-gray-500 mt-1">
-              <span>$50</span>
-              <span>$500</span>
+              <span>₹1,000</span>
+              <span>₹10,000</span>
             </div>
           </div>
         </div>

@@ -106,9 +106,9 @@ const BodyguardDetailPage = () => {
         <h3 className="text-lg font-semibold text-gray-900 mb-3">Pricing</h3>
         <div className="flex justify-between items-center">
           <div>
-            <div className="text-2xl font-bold text-gray-900">${bodyguard.hourlyRate}<span className="text-base font-normal text-gray-600">/hour</span></div>
+            <div className="text-2xl font-bold text-gray-900">₹{bodyguard.hourlyRate.toLocaleString('en-IN')}<span className="text-base font-normal text-gray-600">/hour</span></div>
             {bodyguard.dailyRate && (
-              <div className="text-lg text-gray-600 mt-1">${bodyguard.dailyRate}<span className="text-sm">/day</span></div>
+              <div className="text-lg text-gray-600 mt-1">₹{bodyguard.dailyRate.toLocaleString('en-IN')}<span className="text-sm">/day</span></div>
             )}
           </div>
           <button

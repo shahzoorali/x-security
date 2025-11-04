@@ -68,9 +68,9 @@ const BodyguardCard = ({ bodyguard }) => {
                 {bodyguard.availability}
               </span>
               <div className="text-right">
-                <div className="text-sm font-semibold text-gray-900">${bodyguard.hourlyRate}/hr</div>
+                <div className="text-sm font-semibold text-gray-900">₹{bodyguard.hourlyRate.toLocaleString('en-IN')}/hr</div>
                 {bodyguard.dailyRate && (
-                  <div className="text-xs text-gray-500">${bodyguard.dailyRate}/day</div>
+                  <div className="text-xs text-gray-500">₹{bodyguard.dailyRate.toLocaleString('en-IN')}/day</div>
                 )}
               </div>
             </div>
